@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TasksService} from "../tasks.service";
 
 @Component({
   selector: 'app-todo-list',
@@ -6,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  tasks = [
-    {name: 'Task 1', completed: false},
-    {name: 'Task 2', completed: false},
-    {name: 'Task 3', completed: false},
-  ]
 
-  constructor() { }
+
+  constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
+  }
+
+  get tasks() {
+    return this.tasksService.tasks;
+  }
+
+
+  addTask(newTaskName: string) {
+    this.tasksService.addTask(newTaskName);
   }
 
 }

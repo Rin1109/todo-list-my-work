@@ -1,4 +1,10 @@
 <h1>Todo-list</h1>
+
+<form (submit)="addTask(taskName.value); taskName.value=''">
+  <input type="text" #taskName>
+  <button type="submit" class="btn btn-outline-primary">Add Task</button>
+</form>
+
 <ul class="list-group mt-3 w-50">
   <li *ngFor="let task of tasks, let i = index" class="list-group-item d-flex justify-content-between align-items-center">
     <input type="checkbox" class="form-check-input" [checked]="task.completed">
