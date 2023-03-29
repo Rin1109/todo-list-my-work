@@ -1,1 +1,8 @@
-<p>todo-list works!</p>
+<h1>Todo-list</h1>
+<ul class="list-group mt-3 w-50">
+  <li *ngFor="let task of tasks, let i = index" class="list-group-item d-flex justify-content-between align-items-center">
+    <input type="checkbox" class="form-check-input" [checked]="task.completed">
+    {{task.name}}
+    <button class="btn btn-outline-danger">Delete</button>
+  </li>
+</ul>
