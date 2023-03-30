@@ -14,7 +14,7 @@ export class TasksService {
   constructor() {
   }
 
-  
+
   addTask(newTaskName: string) {
     this.tasks.push({ name: newTaskName, completed: false });
     this.tasksService.setTasks([...this.tasks]);
@@ -22,5 +22,9 @@ export class TasksService {
 
   setTasks(tasks: ({ name: string; completed: boolean } | { name: string; completed: boolean } | { name: string; completed: boolean })[]) {
 
+  }
+
+  deleteTask(index: number) {
+    this.tasks.splice(index, 1);
   }
 }

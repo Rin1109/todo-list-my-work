@@ -24,4 +24,8 @@ export class TodoListComponent implements OnInit {
     this.tasksService.setTasks([...this.tasks]);
   }
 
+  deleteTask(index: number) {
+    this.tasksService.deleteTask(index) ;
+  }
+
 }
