@@ -21,6 +21,7 @@ export class TodoListComponent implements OnInit {
 
   addTask(newTaskName: string) {
     this.tasksService.addTask(newTaskName);
+    this.tasksService.setTasks([...this.tasks]);
   }
 
 }
