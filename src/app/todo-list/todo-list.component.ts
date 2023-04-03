@@ -9,7 +9,7 @@ import {TasksService} from "../tasks.service";
 export class TodoListComponent implements OnInit {
 
 
-  constructor(private tasksService: TasksService) { }
+  constructor(public tasksService: TasksService) { }
 
   ngOnInit(): void {
   }
@@ -27,5 +27,6 @@ export class TodoListComponent implements OnInit {
   deleteTask(index: number) {
     this.tasksService.deleteTask(index) ;
   }
+
 
 }

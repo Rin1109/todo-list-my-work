@@ -2,13 +2,20 @@
 
 <form (submit)="addTask(taskName.value); taskName.value=''">
   <input type="text" #taskName>
-  <button type="submit" class="btn btn-outline-primary">Add Task</button>
+  <button type="submit" class="btn btn-outline-primary my-md-3 add">Add Task</button>
 </form>
 
+<app-task-filters></app-task-filters>
+
 <ul class="list-group mt-3 w-50">
-  <li *ngFor="let task of tasks, let i = index" class="list-group-item d-flex justify-content-between align-items-center">
-    <input type="checkbox" class="form-check-input" [checked]="task.completed">
-    {{task.name}}
-    <button class="btn btn-outline-danger" (click)="deleteTask(i)">Delete</button>
-  </li>
+  <ng-container *ngFor="let task of tasks; let i = index">
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      *ngIf="(tasksService.showCompleted && task.completed) || (tasksService.showNotCompleted && !task.completed) || (!tasksService.showCompleted && !tasksService.showNotCompleted)"
+    >
+      <input type="checkbox" class="form-check-input" [checked]="task.completed">
+      {{task.name}}
+      <button class="btn btn-outline-danger" (click)="deleteTask(i)">Delete</button>
+    </li>
+  </ng-container>
 </ul>

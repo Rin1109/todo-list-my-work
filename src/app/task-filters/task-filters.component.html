@@ -1,0 +1,10 @@
+<div>
+  <label>
+    <input type="checkbox" [(ngModel)]="showCompleted" (change)="toggleShowCompleted()">
+    Show completed tasks
+  </label>
+  <label class="mb-3 p-lg-3">
+    <input type="checkbox" [(ngModel)]="showNotCompleted" (change)="toggleShowNotCompleted()">
+    Show not completed tasks
+  </label>
+</div>

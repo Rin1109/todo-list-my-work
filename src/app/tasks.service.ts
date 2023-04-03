@@ -9,7 +9,11 @@ export class TasksService {
     {name: 'Task 2', completed: false},
     {name: 'Task 3', completed: false},
   ]
-  private tasksService: any;
+  public tasksService: any;
+
+  showCompleted: boolean = true;
+  showNotCompleted: boolean = true;
+
 
   constructor() {
   }
@@ -27,4 +31,16 @@ export class TasksService {
   deleteTask(index: number) {
     this.tasks.splice(index, 1);
   }
+
+  toggleShowCompleted() {
+    this.showCompleted = !this.showCompleted;
+  }
+
+  toggleShowNotCompleted() {
+    this.showNotCompleted = !this.showNotCompleted;
+  }
+
+
+
+
 }
