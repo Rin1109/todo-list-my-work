@@ -1,13 +1,19 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
-  <a [title]="product.name + ' details'">
-    {{ product.name }}
-  </a>
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
-  <button (click)="share()">
-    Share
-  </button>
+
+<div class="card-deck">
+  <div class="card mb-4" *ngFor="let product of products">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text" *ngIf="product.description">
+        Description: {{ product.description }}
+      </p>
+      <button class="btn btn-primary" (click)="share()">
+        Share
+      </button>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{ product.name }} details</small>
+    </div>
+  </div>
 </div>
