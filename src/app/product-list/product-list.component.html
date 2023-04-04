@@ -2,7 +2,7 @@
 
 
 <div class="card-deck">
-  <div class="card mb-4" *ngFor="let product of products">
+  <div class="card mb-4" *ngFor="let product of products; index as productId">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
       <p class="card-text" *ngIf="product.description">
