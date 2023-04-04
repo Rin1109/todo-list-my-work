@@ -18,3 +18,18 @@
     </div>
   </div>
 </div>
+
+<div class="card-deck">
+  <div class="card mb-4" *ngFor="let phone of phones">
+    <div class="card-body">
+      <h5 class="card-title" >{{phone.name}}</h5>
+      <p class="card-text" *ngIf="phone.description">Description: {{ phone.description }}</p>
+      <button class="btn btn-primary" (click)="showPrice()"> Show price</button>
+      <p *ngIf="showPriceFlag">Price: ${{ phone.price }}</p>
+<!--      <app-product-alerts [phone]="phone"></app-product-alerts>-->
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">{{ phone.name }} details</small>
+    </div>
+  </div>
+</div>

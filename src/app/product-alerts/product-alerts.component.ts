@@ -10,6 +10,8 @@ export class ProductAlertsComponent implements OnInit {
 
   @Input() product: any;
 
+  @Input() phone: any;
+
   constructor() { }
 
   ngOnInit(): void {
