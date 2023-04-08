@@ -13,6 +13,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import {RouterModule} from "@angular/router";
 import { TourOfHeroesComponent } from './tour-of-heroes/tour-of-heroes.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeroesComponent } from './heroes/heroes.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     TourOfHeroesComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
